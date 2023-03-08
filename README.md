@@ -1,9 +1,9 @@
 <p align="center">
-  <img alt="Cypress" src="https://i.imgur.com/mxWKasN.png">
+  <img alt="Cypress" style="max-width: 50%" src="https://i.imgur.com/mxWKasN.png">
 </p>
 
 <p align="center">
-  <img alt="Cypress" src="https://i.imgur.com/INWGR4q.png">
+  <img alt="Cypress" style="max-width: 50%" src="https://i.imgur.com/INWGR4q.png">
 </p>
 
 ## What is cypress-course ?
