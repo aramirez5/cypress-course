@@ -9,6 +9,10 @@ module.exports = defineConfig({
     },
     specPattern: "cypress/e2e/**/*.{js,ts,feature}",
     chromeWebSecurity: false,
-    experimentalSessionAndOrigin: true
+    experimentalStudio: true,
+    env: {
+      webdriveruni_homepage: "http://www.webdriveruniversity.com",
+      first_name: "John"
+    }
   },
 });

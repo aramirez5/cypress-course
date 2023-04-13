@@ -10,6 +10,8 @@ describe("Verify checkboxes via webdriveruni", () => {
     it("Check and validate checkbox", () => {    
         cy.get('#checkboxes > :nth-child(1) > input').as('option-1')
         cy.get('@option-1').check().should('be.checked')
+        cy.get('@option-1').check().should('be.checked')
+        cy.get('.table > tbody > :nth-child(2) > :nth-child(1) > a > img').select("Maven")
     });
 
     it("Uncheck and validate checkbox", () => {

@@ -1,5 +1,5 @@
-import AutoStore_Homepage_PO from '../../support/pageObjects/automation-test-store/AutoStore_Homepage_PO'
-import AutoStore_HairCare_PO from '../../support/pageObjects/automation-test-store/AutoStore_HairCare_PO'
+import AutoStore_Homepage_PO from '../support/pageObjects/automation-test-store/AutoStore_Homepage_PO'
+import AutoStore_HairCare_PO from '../support/pageObjects/automation-test-store/AutoStore_HairCare_PO'
 
 /// <reference types="cypress" />
 
