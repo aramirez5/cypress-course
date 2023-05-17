@@ -19,6 +19,6 @@ describe("Handling IFrame & Modals", () => {
             expect(text).to.include('Welcome to webdriveruniversity.com we sell a wide range of electrical goods');
         })
 
-        cy.get('@modal').contains('Close').click()
+        cy.get('@modal').contains('zz').click()
     });
 })
