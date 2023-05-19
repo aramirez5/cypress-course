@@ -45,6 +45,11 @@ Cypress.Commands.add("webdriverUni_ContactForm_Submission", (firstName, lastName
     cy.get($selector).contains(textToLocate)
 })
 
+import addContext from 'mochawesome/addContext';
+Cypress.Commands.add('addContext', (context) => {
+  cy.once('test:after:run', (test) => addContext({ test }, context));
+});
+
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 // import 'cypress-file-upload';

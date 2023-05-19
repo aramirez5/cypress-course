@@ -10,6 +10,10 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/**/*.{js,ts,feature}",
     chromeWebSecurity: false,
     experimentalStudio: true,
+    reporter:'cypress-multi-reporters',
+    reporterOptions: {
+      configFile: 'reporter-config.json'
+    },
     env: {
       webdriveruni_homepage: "http://www.webdriveruniversity.com",
       first_name: "John"
