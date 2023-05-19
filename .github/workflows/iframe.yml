@@ -15,14 +15,23 @@ jobs:
           browser: chrome
           spec: cypress/e2e/iframe.cy.js
       
-      - uses: actions/upload-artifact@v3
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-      
-      - uses: actions/upload-artifact@v3
+          
+      - name: Upload videos
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-videos
           path: cypress/videos
+      
+      - name: Upload report
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-report
+          path: cypress/results
