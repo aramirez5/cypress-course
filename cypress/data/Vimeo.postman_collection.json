@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "49a9e7c3-b3b9-42f1-aaf8-838c3670ff2c",
+		"name": "Vimeo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25579818"
+	},
+	"item": [
+		{
+			"name": "Get user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "b6953a3131f2efba2078fa455925f66b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.vimeo.com/users/198917936",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vimeo",
+						"com"
+					],
+					"path": [
+						"users",
+						"198917936"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
