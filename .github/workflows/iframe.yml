@@ -8,27 +8,35 @@ jobs:
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
-   
+
+      - name: Copy Cypress config
+        run: |
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            cp cypress.config.windows.js cypress.json
+          else
+            cp cypress.config.linux.js cypress.json
+          fi
+
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           browser: chrome
           spec: cypress/e2e/iframe.cy.js
-      
+
       - name: Upload screenshots
         uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-          
+
       - name: Upload videos
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-videos
           path: cypress/videos
-      
+
       - name: Upload report
         uses: actions/upload-artifact@v3
         if: always()
