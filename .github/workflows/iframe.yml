@@ -31,13 +31,19 @@ jobs:
           path: cypress/screenshots
 
       - name: Check if cypress/videos folder exists
-        run: test -d cypress/videos
-        continue-on-error: true
+        run: |
+          if [ -d cypress/videos ]; then
+            echo "cypress/videos folder exists."
+            export CYPRESS_VIDEOS_EXIST=true
+          else
+            echo "cypress/videos folder does not exist."
+            export CYPRESS_VIDEOS_EXIST=false
+          fi
         id: check_cypress_folder
 
       - name: Upload videos
         uses: actions/upload-artifact@v4
-        if: steps.check_cypress_folder.outputs.result == 'success'
+        if: env.CYPRESS_VIDEOS_EXIST == 'true'
         with:
           name: cypress-videos
           path: cypress/videos
