@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Copy Cypress config
         run: |
@@ -24,7 +24,7 @@ jobs:
           spec: cypress/e2e/iframe.cy.js
 
       - name: Upload screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots
@@ -36,14 +36,14 @@ jobs:
         id: check_cypress_folder
 
       - name: Upload videos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: steps.check_cypress_folder.outputs.result == 'success'
         with:
           name: cypress-videos
           path: cypress/videos
 
       - name: Upload report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: cypress-report
