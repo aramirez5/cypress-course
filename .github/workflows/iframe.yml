@@ -12,9 +12,9 @@ jobs:
       - name: Copy Cypress config
         run: |
           if [[ "$RUNNER_OS" == "Windows" ]]; then
-            cp cypress.config.windows.js cypress.json
+            cp cypress.config.windows.js cypress.config.js
           else
-            cp cypress.config.linux.js cypress.json
+            cp cypress.config.linux.js cypress.config.js
           fi
 
       - name: Cypress run
