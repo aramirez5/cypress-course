@@ -18,7 +18,7 @@ jobs:
           fi
 
       - name: Cypress run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           browser: chrome
           spec: cypress/e2e/iframe.cy.js
@@ -30,9 +30,14 @@ jobs:
           name: cypress-screenshots
           path: cypress/screenshots
 
+      - name: Check if cypress/videos folder exists
+        run: test -d cypress/videos
+        continue-on-error: true
+        id: check_cypress_folder
+
       - name: Upload videos
         uses: actions/upload-artifact@v3
-        if: always()
+        if: steps.check_cypress_folder.outputs.result == 'success'
         with:
           name: cypress-videos
           path: cypress/videos
